@@ -14,29 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var script = ""
-        val assetManager = this.getResources().getAssets()
-        try {
-            // CSVファイルの読み込み
-            val inputStream = assetManager.open("script.jump")
-            val inputStreamReader = InputStreamReader(inputStream)
-            val bufferReader = BufferedReader(inputStreamReader)
-            var line: String
-//            line = bufferReader.readLine()
-//
-
-            val lines = bufferReader.readLines()
-            for (item in lines) {
-                script += item + "\n"
-                script += "test:"
-            }
-
-
-            bufferReader.close()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        println(script);
+        val rabbit = Rabbit()
+        rabbit.run("script.jump", this.getResources())
     }
 }
