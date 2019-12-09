@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             val lines = bufferReader.readLines()
             for (item in lines) {
                 script += item + "\n"
+                script += "test:"
             }
 
 
